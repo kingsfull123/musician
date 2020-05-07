@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+:root {
+  --yellow: #ffa500;
+  --green: #00ff7f;
+  font-family: "Oswald", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  color: #fff;
+  text-decoration: none;
+  background-color: #00bfff;
+  display: inline-block;
+  padding: 0.5em 0.8em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin-top: 1.68em;
+}
+
+.button-primary {
+  padding: 0.6em 1.6em;
+  display: inline-block;
+  font-size: 0.65em;
+}
+
+/* Container */
+
+.container {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+section {
+  padding: 4em 3em;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+header img {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  padding-right: 0.8em;
+  color: #000;
+}
+
+/* Hero */
+.hero {
+  background-image: url("./images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.1em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.hero h1:after {
+  position: absolute;
+  content: "";
+  width: 2em;
+  left: 1.15em;
+  bottom: -0.2em;
+  height: 2px;
+  background-color: #fff;
+}
+
+.hero p {
+  width: 80%;
+}
+
+/* Upper */
+
+.upper {
+  background-color: var(--yellow);
+}
+
+/* lower */
+
+.lower {
+  background-color: var(--green);
+}
+
+@media (min-width: 765px) {
+  html {
+    font-size: 130%;
+  }
+
+  header {
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+    background: transparent;
+    padding: 0 20px;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 70% auto;
+    grid-template-areas:
+      "hero upper"
+      "hero lower";
+  }
+
+  .hero {
+    grid-area: hero;
+  }
+
+  .upper {
+    grid-area: upper;
+  }
+
+  .lower {
+    grid-area: lower;
+  }
+
+  section {
+    display: grid;
+    align-content: center;
+  }
+
+  .hero h1 {
+    font-size: 3em;
+  }
+
+  .hero p {
+    font-size: 2.1em;
+    width: 67%;
+  }
+}
